@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body onload="onInit()">
+
+    <nav class="navbar">
+        <ul>
+            <div class="welcome">
+                <h3>Welcome Back</h3>
+            </div>
+            <div class="items">
+                <li class="active">Books</li>
+                <li>Shopping Cart</li>
+            </div>
+        </ul>
+    </nav>
+    <div class="black-tainer hide" onclick="onCloseModal()"></div>
+    <div class="modal-container hide">
+        <div class="modal-content">
+
+        </div>
+
+    </div>
+    <div class="main-container">
+        <div class="container">
+            <h1>Welcome to my Poker Bookshop</h1>
+            <div class="utilities">
+                <button class="btn create" onclick="onCreateBookModal()">
+                    Create new book
+                </button>
+                <input class="search" type="search" placeholder="Search..." onkeyup="onSearch(this.value)">
+                <select class="sort-by" onchange="onSetSortBy(this.value)">
+                    <option value="">Select Sorting</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                </select>
+                <div class="presentation-buttons">
+                    <button value=1 class="btn presentation-button-1 active"
+                        onclick="onChangeLayout(1)">⋮⋮⋮</button><button value=2 class="btn presentation-button-2"
+                        onclick="onChangeLayout(2)">≣</button>
+                </div>
+            </div>
+            <section class="books">
+                <!-- Code insertion by JS -->
+            </section>
+            <div class="nav-buttons">
+                <button class="btn back" onclick="onPageNav(-1)">Back</button>
+                <button class="btn next" onclick="onPageNav(1)">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/book-service.js"></script>
+    <script src="js/controller.js"></script>
+</body>
+
+</html>
